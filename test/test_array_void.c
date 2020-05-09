@@ -54,6 +54,7 @@ void test_filter_void( void ){
 
   printf("Test passed\n\n");
 }
+
 void test_reduce_void( void ){
   printf("Testing filter\n");
   printf("Should return sum of the list");
@@ -66,6 +67,7 @@ void test_reduce_void( void ){
   assert(*( int *)total == 10);
   printf("Test passed\n\n");
 }
+
 int main(void) {
   test_map_void();
   test_filter_void();

@@ -1,7 +1,0 @@
-{
-  "files.associations": {
-    "array_void.h": "c",
-    "array.h": "c",
-    "__locale": "c"
-  }
-}
