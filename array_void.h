@@ -17,8 +17,17 @@ typedef struct
 typedef ArrayVoid *ArrayVoid_ptr;
 typedef void (*DisplayData)(Object);
 
+void display_char( Object);
 void display_num( Object num);
+
 Object increment_void( Object number);
+Object to_lower_case( Object );
+Bool is_even_void( Object );
+Bool is_vowel( Object );
+
+Object assign_char( char letter);
+Object assign_int( int num);
+
 void display_void( ArrayVoid_ptr src, DisplayData displayer);
 ArrayVoid_ptr create_void_array( int);
 
