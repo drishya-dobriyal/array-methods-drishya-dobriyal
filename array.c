@@ -45,3 +45,14 @@ Array_ptr filter( Array_ptr src, Predicate predicate ){
   }
   return result;
 }
+
+int sum( int num1, int num2 ){
+  return num1 + num2;
+}
+
+int reduce(Array_ptr src, int init, Reducer reducer){
+  int result = init;
+  for (int i = 0; i < src->length; i++)
+    result = (*reducer)(result, src->array[i]);
+  return result;
+}

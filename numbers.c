@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "array.h"
 
 int main(void){
@@ -12,5 +13,9 @@ int main(void){
   Predicate is_even_address = &is_even;
   result = filter( number_list , is_even_address);
   display(result);
+
+  Reducer sum_address = &sum;
+  int total = reduce(number_list, 0, sum_address);
+  printf("the sum is %d\n", total);
   return 0;
 }
