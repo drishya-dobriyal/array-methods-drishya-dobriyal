@@ -24,6 +24,7 @@ Object increment_void( Object number);
 Object to_lower_case( Object );
 Bool is_even_void( Object );
 Bool is_vowel( Object );
+Object sum_void( Object number1, Object number2 );
 
 Object assign_char( char letter);
 Object assign_int( int num);

@@ -22,6 +22,7 @@ int main(void){
   DisplayData displayer[] = { &display_num, &display_char};
   MapperVoid mapper[] = { &increment_void, &to_lower_case};
   PredicateVoid predicate[] = { &is_even_void, &is_vowel };
+  ReducerVoid reducer[] = { &sum_void };
 
   ArrayVoid_ptr src = create_void_array(3);
   src->array[0] = assign_char('A');
@@ -37,6 +38,11 @@ int main(void){
   result = map_void(src, mapper[0]);
   printf("Increment number list \n");
   display_void(result, displayer[0]);
+
+  printf("Sum of numbers : \n");
+  Object init = assign_int(0); 
+  Object total = reduce_void( src, init, reducer[0]);
+  printf("->%d\n",*(int *)total);
 
   result = filter_void(src, predicate[0]);
   printf("filter even number list \n");
