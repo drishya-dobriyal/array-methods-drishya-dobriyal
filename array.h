@@ -23,5 +23,6 @@ int reduce(Array_ptr src, int init, Reducer reducer);
 
 void display( Array_ptr);
 int increment( int );
+Bool is_even( int );
 Array_ptr create_array(int);
 #endif

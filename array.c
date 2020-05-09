@@ -24,3 +24,24 @@ Array_ptr map(Array_ptr src, Mapper mapper) {
     result->array[i] = (*mapper)(src->array[i]);
   return result;
 }
+
+Bool is_even( int number) {
+  return number % 2 == 0;
+}
+
+Array_ptr filter( Array_ptr src, Predicate predicate ){
+  int temp[src->length];
+  int count = 0;
+  for(int i = 0; i < src->length; i++){
+    Bool is_valid = (*predicate)(src->array[i]);
+    if( is_valid ) {
+      temp[count] = src->array[i];
+      count++;
+    } 
+  }
+  Array_ptr result = create_array(count);
+  for(int i = 0; i < count; i++){
+    result->array[i] = temp[i];
+  }
+  return result;
+}
