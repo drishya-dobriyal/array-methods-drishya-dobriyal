@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 #include "array_void.h"
 
 ArrayVoid_ptr create_void_array( int length){
@@ -70,16 +71,14 @@ ArrayVoid_ptr filter_void(ArrayVoid_ptr src, PredicateVoid predicate){
   for (int i = 0; i < src->length; i++)
   {
     if((*predicate)(src->array[i])) {
-      temp[count] = src->array[i];
+      temp[count] = malloc(sizeof(void *));
+      memcpy(temp[count], src->array[i], 4);
       count++;
     }
   }
   ArrayVoid_ptr result = create_void_array(count);
   for (int i = 0; i < count; i++)
-  {
-    result->array[i] = malloc(sizeof(Object));
     result->array[i] = temp[i];
-  }
   return result;
 }
 
