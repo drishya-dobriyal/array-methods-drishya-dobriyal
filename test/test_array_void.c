@@ -8,7 +8,7 @@ void test_map_void() {
   printf("Should increment the given list \n");
   ArrayVoid_ptr src = create_void_array(5);
   for( int i = 0; i < src->length; i++)
-    src->array[i] = assign_int(i);
+    src->array[i] = assign_int(i );
   ArrayVoid_ptr result = map_void( src, mapper[0]);
   assert(result->length == 5);
   assert(*( int *)result->array[0] == 1);

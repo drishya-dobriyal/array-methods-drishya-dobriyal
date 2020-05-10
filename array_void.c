@@ -71,8 +71,8 @@ ArrayVoid_ptr filter_void(ArrayVoid_ptr src, PredicateVoid predicate){
   for (int i = 0; i < src->length; i++)
   {
     if((*predicate)(src->array[i])) {
-      temp[count] = malloc(sizeof(void *));
-      memcpy(temp[count], src->array[i], 4);
+      temp[count] = malloc(sizeof(Object));
+      memcpy(temp[count], src->array[i], sizeof(Object));
       count++;
     }
   }
