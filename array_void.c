@@ -51,7 +51,7 @@ Object assign_char( char letter){
 }
 
 Object assign_int( int num){
-  char *result = malloc(sizeof(int));
+  int *result = malloc(sizeof(int));
   *result = num;
   return result;
 }
